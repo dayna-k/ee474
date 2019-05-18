@@ -1,0 +1,73 @@
+body {
+    background-color: #eee;
+    font-family: 'Laila', serif;
+}
+
+
+
+#center_body{
+    margin-right:auto;
+    margin-left: auto;
+    width: 900px;
+    border: solid 1px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    /* text-align: center; */
+}
+
+#title {
+
+}
+
+#correct {
+  color: green;
+}
+
+#incorrect {
+  color: red;
+}
+
+#table_text{
+  font-family: 'Nunito', sans-serif;
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  /* width: 700px; */
+  text-align: center;
+}
+
+.table_container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collapse {
+  border-collapse: collapse;
+}
+
+.theader {
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+}
+
+table {
+  display: inline-table;
+  width: 30em;
+  font-size: 1.1em;
+}
+
+th{
+  border-bottom: 1px solid black;
+  text-align: left;
+  padding: 3px;
+}
+
+td{
+  border-bottom: 1px solid #c5c5c5;
+  text-align: left;
+  padding: 3px;
+}
