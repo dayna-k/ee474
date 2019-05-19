@@ -35,7 +35,12 @@
 
     <div class="container">
       <h2 id="title">img segmentation and recoloring the clothes</h1>
-      <button id="btn_1" onclick="btn1()">button1</button>
+      <!-- <button class="button" id="btn_1" onclick="btn1()">button1</button> -->
+      <form id='target' action=''>
+        <input id='target_input' name='cmd' type='text' placeholder="type command">
+        <input class="button" type='submit' value='submit'>
+      </form>
+      <h4><%= data %></h4>
       <div class="img_container">
         <div class="row">
           <div class="col" style="border: solid 1px;padding: 10px; margin-right: 5px;">
@@ -57,7 +62,7 @@
         </div>
       </div>
       <div>
-        <button id="btn_1" onclick="btn1()">button2</button>
+        <button class="button" id="btn_1" onclick="btn1()">reset</button>
       </div>
     </div>
 

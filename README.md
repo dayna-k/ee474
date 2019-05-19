@@ -7,6 +7,7 @@ img segmentation and recoloring the clothes
 
 
 # index.html: 초기 버전
+http://dayna-k.github.io/ee474로 접속
 
 # app.js: shell 연결 위해 nodejs, express 이용
 clone 및 pull 후

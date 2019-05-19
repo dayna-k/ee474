@@ -1,5 +1,9 @@
+:root {
+    --background: #F7F7F7;
+}
+
 body {
-    background-color: #eee;
+    background-color: var(--background);
     font-family: 'Laila', serif;
     margin-top: 10px;
 }
