@@ -40,7 +40,7 @@
         <input id='target_input' name='cmd' type='text' placeholder="type command">
         <input class="button" type='submit' value='submit'>
       </form>
-      <h4><%= data %></h4>
+      <h4 id="term_result"><%= data %></h4>
       <div class="img_container">
         <div class="row">
           <div class="col" style="border: solid 1px;padding: 10px; margin-right: 5px;">
@@ -62,7 +62,7 @@
         </div>
       </div>
       <div>
-        <button class="button" id="btn_1" onclick="btn1()">reset</button>
+        <button class="button" id="btn_reset" onclick="btn_reset()">reset</button>
       </div>
     </div>
 
@@ -78,6 +78,11 @@
     <!-- <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script> -->
     <script src="/javascripts/index.js"></script>
+    <script type="text/javascript">
+      function btn_reset(){
+        location.href="/";
+      }
+    </script>
 
   </body>
 </html>

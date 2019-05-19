@@ -18,8 +18,10 @@ router.get('/', function(req, res, next) {
       res.render('index', { title: 'EE474', data: stdout });
     });
   }
-  else {res.render('index', { title: 'EE474', data: "none" });}
+  else {res.render('index', { title: 'EE474', data: "" });}
 });
+
+
 
 
 module.exports = router;
