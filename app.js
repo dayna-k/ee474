@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var sampleRouter = require('./routes/sample');
 var cmdRouter = require('./routes/cmd'); //modified
+// var commonRouter = require('./javascripts/index'); // common
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+//app.use('/', commonRouter);
 app.use('/users', usersRouter);
 app.use('/sample', sampleRouter); //modifed
 app.use('/cmd', cmdRouter); //modifed

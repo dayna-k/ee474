@@ -10,6 +10,10 @@ img segmentation and recoloring the clothes
 http://dayna-k.github.io/ee474로 접속
 
 # app.js: shell 연결 위해 nodejs, express 이용
+```
+node, nodejs, npm 설치 후 최신버전 업데이트 필요
+```
+
 clone 및 pull 후
 
 ```
