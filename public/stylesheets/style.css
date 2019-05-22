@@ -3,6 +3,11 @@
     --darker-grey: #A9A9A9;
     --btn-color: #6CCDEB;
     --light-table-border-color: #EDF0F5;
+    --slider-skyblue: #A4CAFF;
+    --light-purple: #A3A6FF;
+    --light-pink: #FEBBE2;
+    --light-green: #A4FDBE;
+    --light-yellow: #FFFF9B;
 }
 
 @font-face {
@@ -116,13 +121,17 @@ body {
   transition: opacity .2s;
 }
 
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #A4CAFF;
+  background: var(--slider-skyblue);
   cursor: pointer;
 }
 
@@ -130,7 +139,7 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #A4CAFF;
+  background: var(--slider-skyblue);
   cursor: pointer;
 }
 
