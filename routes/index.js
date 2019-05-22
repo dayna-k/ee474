@@ -12,8 +12,8 @@ router.get('/', function(req, res, next) {
       console.log("input: ",req.query.cmd);
       exec(req.query.cmd, function (err, stdout, stderr) {
       //Print stdout/stderr to console
-      console.log(stdout);
-      console.log(stderr);
+      console.log("output: ", stdout);
+      // console.log("error: ", stderr);
       //Simple response to user whenever localhost:3003 is accessed
       res.render('index', { title: 'EE474', data: stdout });
     });
