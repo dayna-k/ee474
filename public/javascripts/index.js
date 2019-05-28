@@ -12,66 +12,82 @@
 
 
 var input_img = ""
-
 var slider1 = document.getElementById("myRange1");
 var slider1_val = document.getElementById("slidevalue1");
-slider1_val.innerHTML = "value: "+slider1.value; // Display the default slider value
 
 var slider2 = document.getElementById("myRange2");
 var slider2_val = document.getElementById("slidevalue2");
-slider2_val.innerHTML = "value: "+slider2.value; // Display the default slider value
-
-window.top_val = slider1.value;
-window.bottom_val = slider2.value;
-
-$("#myRange1")[0].value = window.top_val;
-console.log("top_val: ", window.top_val);
-console.log("bottom_val: ", window.bottom_val);
 
 // Update the current slider value (each time you drag the slider handle)
 slider1.oninput = function() {
   slider1_val.innerHTML = "value: "+this.value;
-  window.top_val = this.value;
+  localStorage.setItem('top_val', slider1.value);
 }
 
 // Update the current slider value (each time you drag the slider handle)
 slider2.oninput = function() {
   slider2_val.innerHTML = "value: "+this.value;
-  window.bottom_val = this.value;
+  localStorage.setItem('bottom_val', slider2.value);
 }
 
 function btn_color(){
   console.log("btn_color clicked");
-  console.log("top_val: ", window.top_val);
-  console.log("bottom_val: ", window.bottom_val);
+  console.log("top_val: ", localStorage.getItem('top_val'))
+  console.log("bottom_val: ", localStorage.getItem('bottom_val'))
   $("#output_img")[0].src = "/images/output/"+input_img;
-  // $("#cmd_submit").click();
+  $("#cmd_submit").click();
 }
 
 function btn_reset(){
+  localStorage.setItem('input_img', "/images/input1.jpg");
+  localStorage.setItem('output_img', "/images/output1.jpg");
+  localStorage.setItem('top_val', 50);
+  localStorage.setItem('bottom_val', 50);
+  $("#myRange1")[0].value = localStorage.getItem('top_val');
+  slider1_val.innerHTML = "value: "+$("#myRange1")[0].value;
+  $("#myRange2")[0].value = localStorage.getItem('bottom_val');
+  slider2_val.innerHTML = "value: "+$("#myRange2")[0].value;
+
+
   location.href="/";
 }
 
 
-
 $(document).ready(function () {
+  setTimeout(function() {
+    console.log('Works!')
+  }, 3000);
+  console.log(localStorage.getItem('input_img'))
+  console.log(localStorage.getItem('output_img'))
+  console.log(localStorage.getItem('top_val'))
+  console.log(localStorage.getItem('bottom_val'))
+  $("#input_img")[0].src = localStorage.getItem('input_img');
+  $("#output_img")[0].src = localStorage.getItem('output_img');
+  $("#myRange1")[0].value = localStorage.getItem('top_val');
+  slider1_val.innerHTML = "value: "+$("#myRange1")[0].value;
+  $("#myRange2")[0].value = localStorage.getItem('bottom_val');
+  slider2_val.innerHTML = "value: "+$("#myRange2")[0].value;
+
 
 
   $("#getimg").change(function () {
     var imgname = document.getElementById("getimg");
     var file = $("#getimg").prop("files")[0];
     console.log("file: ", file.name);
-    // console.log($("#input_img")[0]);
-    $("#input_img")[0].src = "/images/input/"+file.name;
+    localStorage.setItem('input_img', "/images/input/"+file.name);
+    console.log("input_img: ", localStorage.getItem('input_img'))
+    $("#input_img")[0].src = localStorage.getItem('input_img');
+    localStorage.setItem('output_img', "/images/output/"+file.name);
+    console.log("output_img: ", localStorage.getItem('output_img'))
     input_img = file.name;
-    console.log(input_img);
+    // $("#output_img")[0].src = localStorage.getItem('output_img');
+    //console.log(input_img);
 
     $("#target_input")[0].value = "pwd";
     var cmd_input = document.getElementById("target_input");
     console.log("cmd_input: ", cmd_input.value);
     //console.log("cmd: ", req.query.cmd);
     // exec_cmd($("#target_input")[0].value);
-    //$("#cmd_submit").click();
   })
 
 
