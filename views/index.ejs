@@ -36,30 +36,29 @@
     <div class="container">
       <h2 id="title">img segmentation and recoloring the clothes</h1>
       <!-- <button class="button" id="btn_1" onclick="btn1()">button1</button> -->
-      <form id='target' action=''>
-        <input id='target_input' name='cmd' type='text' placeholder="type command">
-        <input class="button" type='submit' value='submit'>
-      </form>
-      <h4 id="term_result"><%= data %></h4>
+
       <div class="img_container">
         <div class="row">
           <div class="col" style="border: solid 1px;padding: 10px; margin-right: 5px;">
           <!-- <div class="img_box float-left" style= "margin-right: 30px;"> -->
-            input img box
-
-            <div class="text-center" style="margin-top: 10px;">
+            <!-- input img box -->
+            <label class="fileSubmit">
+              Select Input Image
+              <input type="file" id="getimg" accept="image/*" required >
+            </label>
+            <div class="text-center" style="margin-top: 0px;">
               <!-- <img id ="input_img" src="/images/input/997_1.jpg" class="rounded show_img" alt="input img" style=""> -->
               <img id ="input_img" src="/images/input1.jpg" class="rounded show_img" alt="input img" style="">
             </div>
           <!-- </div> -->
           </div>
           <div class="col" id ="color_box" style="border: solid 1px; padding: 10px; margin-right: 5px;">
-            color select box
+            color change box
             <div id="color_slider" style="border: solid 1px; margin-top: 15px; padding: 5px;" >
               <div style="border: solid 0.5px;">
                 top slider
                 <div class="slidecontainer" style ="padding: 10px">
-                  <input type="range" min="0" max="100" value="50" class="slider" id="myRange1">
+                  <input type="range" min="0" max="100" class="slider" id="myRange1">
                 </div>
                 <div id="slidevalue1">
                 </div>
@@ -67,7 +66,7 @@
               <div style="border: solid 0.5px; margin-top: 15px;">
                 bottom slider
                 <div class="slidecontainer" style ="padding: 10px">
-                  <input type="range" min="0" max="100" value="50" class="slider" id="myRange2">
+                  <input type="range" min="0" max="100" class="slider" id="myRange2">
                 </div>
                 <div id="slidevalue2">
                 </div>
@@ -80,7 +79,7 @@
 
           <div class="col" style="border: solid 1px; padding: 10px;">
           <!-- <div class="img_box float-right" style= ""> -->
-            output img box
+            output img
             <div class="text-center" style="margin-top: 10px;">
               <img id ="output_img" src="/images/output1.jpg" class="rounded show_img" alt="output img" style="">
             </div>
@@ -88,6 +87,11 @@
           </div>
         </div>
       </div>
+      <form id='target' action=''>
+        <input id='target_input' name='cmd' type='text' placeholder="type command">
+        <input id ='cmd_submit' class="button" type='submit' value='submit'>
+      </form>
+      <h4 id="term_result"><%= data %></h4>
       <div>
         <button class="button" id="btn_reset" onclick="btn_reset()">reset</button>
       </div>
@@ -107,28 +111,62 @@
     <script src="/javascripts/index.js"></script>
 
     <script type="text/javascript">
-      
-      function btn_reset(){
-        location.href="/";
-      }
 
-      var slider1 = document.getElementById("myRange1");
-      var output1 = document.getElementById("slidevalue1");
-      output1.innerHTML = "value: "+slider1.value; // Display the default slider value
-
-      // Update the current slider value (each time you drag the slider handle)
-      slider1.oninput = function() {
-        output1.innerHTML = "value: "+this.value;
-      }
-
-      var slider2 = document.getElementById("myRange2");
-      var output2 = document.getElementById("slidevalue2");
-      output2.innerHTML = "value: "+slider2.value; // Display the default slider value
-
-      // Update the current slider value (each time you drag the slider handle)
-      slider2.oninput = function() {
-        output2.innerHTML = "value: "+this.value;
-      }
+      // var input_img = ""
+      //
+      // var slider1 = document.getElementById("myRange1");
+      // var slider1_val = document.getElementById("slidevalue1");
+      // slider1_val.innerHTML = "value: "+slider1.value; // Display the default slider value
+      //
+      // var slider2 = document.getElementById("myRange2");
+      // var slider2_val = document.getElementById("slidevalue2");
+      // slider2_val.innerHTML = "value: "+slider2.value; // Display the default slider value
+      //
+      // window.top_val = slider1.value;
+      // window.bottom_val = slider2.value;
+      //
+      // $("#myRange1")[0].value = window.top_val;
+      // console.log("top_val: ", window.top_val);
+      // console.log("bottom_val: ", window.bottom_val);
+      //
+      // // Update the current slider value (each time you drag the slider handle)
+      // slider1.oninput = function() {
+      //   slider1_val.innerHTML = "value: "+this.value;
+      //   window.top_val = this.value;
+      // }
+      //
+      // // Update the current slider value (each time you drag the slider handle)
+      // slider2.oninput = function() {
+      //   slider2_val.innerHTML = "value: "+this.value;
+      //   window.bottom_val = this.value;
+      // }
+      //
+      // function btn_color(){
+      //   console.log("btn_color clicked");
+      //   console.log("top_val: ", window.top_val);
+      //   console.log("bottom_val: ", window.bottom_val);
+      //   $("#output_img")[0].src = "/images/output/"+input_img;
+      // }
+      //
+      // function btn_reset(){
+      //   location.href="/";
+      // }
+      //
+      // $(document).ready(function () {
+      //
+      //
+      //   $("#getimg").change(function () {
+      //     var imgname = document.getElementById("getimg");
+      //     var file = $("#getimg").prop("files")[0];
+	    //     console.log("file: ", file.name);
+      //     // console.log($("#input_img")[0]);
+      //     $("#input_img")[0].src = "/images/input/"+file.name;
+      //     input_img = file.name;
+      //     console.log(input_img);
+      //
+      //     //preview();
+      //   })
+      // });
     </script>
 
   </body>

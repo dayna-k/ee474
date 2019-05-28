@@ -41,6 +41,9 @@ body {
     margin-top: 10px;
 }
 
+#target_input{
+  width: 400px;
+}
 
 #title_body{
     /* margin-right:auto;
@@ -56,6 +59,7 @@ body {
 #title {
 
 }
+
 #color_box{
   width: 50px;
 }
@@ -102,6 +106,43 @@ body {
 }
 
 .button_long:hover{
+    background-color: var(--btn-color);
+    box-shadow: 1px 1px 2px grey;
+    color: white;
+    text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey);
+}
+
+.fileSubmit {
+  /* margin-bottom: 10px; */
+	overflow: hidden;
+  font-weight: 400;
+	/* display: block; */
+	float: center;
+
+  border: solid var(--darker-grey) 1px;
+  border-radius: 5px 5px;
+
+  width: 200px;
+  background-color: var(--light-table-border-color);
+  padding: 3px 3px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+.fileSubmit [type=file] {
+  filter: alpha(opacity=0);
+  min-height: 0%;
+  min-width: 0%;
+  opacity: 0;
+  position: absolute;
+}
+
+.fileSubmit:hover{
     background-color: var(--btn-color);
     box-shadow: 1px 1px 2px grey;
     color: white;
