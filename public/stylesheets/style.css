@@ -149,6 +149,11 @@ body {
     text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey);
 }
 
+.png24 {
+   tmp: expression(setPng24(this));
+}
+
+
 
 .slider {
   -webkit-appearance: none;
@@ -205,7 +210,7 @@ body {
   text-align: center;
   padding: 30px;
   border: solid 1px;
-  /* width: 900px; */
+  width: 900px;
   height: 430px;
 }
 

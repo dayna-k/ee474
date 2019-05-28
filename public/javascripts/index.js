@@ -20,13 +20,13 @@ var slider2_val = document.getElementById("slidevalue2");
 
 // Update the current slider value (each time you drag the slider handle)
 slider1.oninput = function() {
-  slider1_val.innerHTML = "value: "+this.value;
+  slider1_val.innerHTML = ": "+this.value;
   localStorage.setItem('top_val', slider1.value);
 }
 
 // Update the current slider value (each time you drag the slider handle)
 slider2.oninput = function() {
-  slider2_val.innerHTML = "value: "+this.value;
+  slider2_val.innerHTML = ": "+this.value;
   localStorage.setItem('bottom_val', slider2.value);
 }
 
@@ -52,6 +52,15 @@ function btn_reset(){
   location.href="/";
 }
 
+function setPng24(obj) {
+        obj.width=obj.height=1;
+        obj.className=obj.className.replace(/\bpng24\b/i,'');
+        obj.style.filter =
+        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');"
+        obj.src='';
+        return '';
+    }
+
 
 $(document).ready(function () {
   setTimeout(function() {
@@ -64,9 +73,9 @@ $(document).ready(function () {
   $("#input_img")[0].src = localStorage.getItem('input_img');
   $("#output_img")[0].src = localStorage.getItem('output_img');
   $("#myRange1")[0].value = localStorage.getItem('top_val');
-  slider1_val.innerHTML = "value: "+$("#myRange1")[0].value;
+  slider1_val.innerHTML = ": "+$("#myRange1")[0].value;
   $("#myRange2")[0].value = localStorage.getItem('bottom_val');
-  slider2_val.innerHTML = "value: "+$("#myRange2")[0].value;
+  slider2_val.innerHTML = ": "+$("#myRange2")[0].value;
 
 
 
