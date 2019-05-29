@@ -104,14 +104,14 @@ def imageSegmentationGenerator():
                     b, g, r = re[height, width]
                     h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
                     h = (h + args.top/100) - int(h + args.top/100)
-                    s = (s + args.top/100) - int(s + args.top/100)
+                    # s = (s + args.top/100) - int(s + args.top/100)
                     r, g, b = colorsys.hsv_to_rgb(h, s, v)
                     re[height, width] = b * 255, g * 255, r * 255
                 if (pred[height][width][2] == 255):
                     b, g, r = re[height, width]
                     h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
                     h = (h + args.bottom/100) - int(h + args.bottom/100)
-                    s = (s + args.top / 100) - int(s + args.top / 100)
+                    # s = (s + args.top / 100) - int(s + args.top / 100)
                     r, g, b = colorsys.hsv_to_rgb(h, s, v)
                     re[height, width] = b * 255, g * 255, r * 255
 

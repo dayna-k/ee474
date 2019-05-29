@@ -107,7 +107,8 @@ $(document).ready(function () {
     // $("#output_img")[0].src = localStorage.getItem('output_img');
     //console.log(input_img);
 
-    $("#target_input")[0].value = "cd public/py_code && source activate pbj && python myUI.py --images ./input/"+file.name+" --top "+localStorage.getItem('top_val')+" --bottom "+localStorage.getItem('bottom_val');
+    $("#target_input")[0].value = "cd public/py_code; source activate pbj; python myUI.py --images ./input/"+file.name+" --top "+localStorage.getItem('top_val')+" --bottom "+localStorage.getItem('bottom_val')+"; sleep 5; pwd";
+    // $("#target_input")[0].value = "cd public/py_code && source activate pbj && python myUI.py --images ./input/"+file.name+" --top "+localStorage.getItem('top_val')+" --bottom "+localStorage.getItem('bottom_val') && sleep(7) && pwd;
 
     var cmd_input = document.getElementById("target_input");
     console.log("cmd_input: ", cmd_input.value);
