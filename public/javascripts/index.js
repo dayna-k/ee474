@@ -64,8 +64,18 @@ function setPng24(obj) {
 
 
 $(document).ready(function () {
+  console.log(localStorage.getItem('input_img'))
+  console.log(localStorage.getItem('output_img'))
+  console.log(localStorage.getItem('top_val'))
+  console.log(localStorage.getItem('bottom_val'))
+  $("#input_img")[0].src = localStorage.getItem('input_img');
+  $("#output_img")[0].src = localStorage.getItem('output_img');
+  $("#myRange1")[0].value = localStorage.getItem('top_val');
+  slider1_val.innerHTML = ": "+$("#myRange1")[0].value;
+  $("#myRange2")[0].value = localStorage.getItem('bottom_val');
+  slider2_val.innerHTML = ": "+$("#myRange2")[0].value;
   setTimeout(function() {
-    console.log('Works!')
+    console.log('Reload!')
     console.log(localStorage.getItem('input_img'))
     console.log(localStorage.getItem('output_img'))
     console.log(localStorage.getItem('top_val'))
@@ -97,7 +107,7 @@ $(document).ready(function () {
     // $("#output_img")[0].src = localStorage.getItem('output_img');
     //console.log(input_img);
 
-    $("#target_input")[0].value = "cd py_code && source activate pbj && python myUI.py --images ./input/"+file.name+" --top "+localStorage.getItem('top_val')+" --bottom "+localStorage.getItem('bottom_val');
+    $("#target_input")[0].value = "cd public/py_code && source activate pbj && python myUI.py --images ./input/"+file.name+" --top "+localStorage.getItem('top_val')+" --bottom "+localStorage.getItem('bottom_val');
 
     var cmd_input = document.getElementById("target_input");
     console.log("cmd_input: ", cmd_input.value);
