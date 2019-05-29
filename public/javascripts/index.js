@@ -34,7 +34,8 @@ function btn_color(){
   console.log("btn_color clicked");
   console.log("top_val: ", localStorage.getItem('top_val'))
   console.log("bottom_val: ", localStorage.getItem('bottom_val'))
-  $("#output_img")[0].src = "/images/output/"+input_img;
+  //$("#output_img")[0].src = "/images/output/"+input_img;
+  $("#output_img")[0].src = "/py_code/output/output.jpg";
   $("#cmd_submit").click();
 }
 
@@ -65,17 +66,18 @@ function setPng24(obj) {
 $(document).ready(function () {
   setTimeout(function() {
     console.log('Works!')
-  }, 3000);
-  console.log(localStorage.getItem('input_img'))
-  console.log(localStorage.getItem('output_img'))
-  console.log(localStorage.getItem('top_val'))
-  console.log(localStorage.getItem('bottom_val'))
-  $("#input_img")[0].src = localStorage.getItem('input_img');
-  $("#output_img")[0].src = localStorage.getItem('output_img');
-  $("#myRange1")[0].value = localStorage.getItem('top_val');
-  slider1_val.innerHTML = ": "+$("#myRange1")[0].value;
-  $("#myRange2")[0].value = localStorage.getItem('bottom_val');
-  slider2_val.innerHTML = ": "+$("#myRange2")[0].value;
+    console.log(localStorage.getItem('input_img'))
+    console.log(localStorage.getItem('output_img'))
+    console.log(localStorage.getItem('top_val'))
+    console.log(localStorage.getItem('bottom_val'))
+    $("#input_img")[0].src = localStorage.getItem('input_img');
+    $("#output_img")[0].src = localStorage.getItem('output_img');
+    $("#myRange1")[0].value = localStorage.getItem('top_val');
+    slider1_val.innerHTML = ": "+$("#myRange1")[0].value;
+    $("#myRange2")[0].value = localStorage.getItem('bottom_val');
+    slider2_val.innerHTML = ": "+$("#myRange2")[0].value;
+  }, 4000);
+
 
 
 
@@ -83,16 +85,20 @@ $(document).ready(function () {
     var imgname = document.getElementById("getimg");
     var file = $("#getimg").prop("files")[0];
     console.log("file: ", file.name);
-    localStorage.setItem('input_img', "/images/input/"+file.name);
+    //localStorage.setItem('input_img', "/images/input/"+file.name);
+    localStorage.setItem('input_img', "/py_code/input/"+file.name);
     console.log("input_img: ", localStorage.getItem('input_img'))
     $("#input_img")[0].src = localStorage.getItem('input_img');
-    localStorage.setItem('output_img', "/images/output/"+file.name);
+    //localStorage.setItem('output_img', "/image/output/"+file.name);
+    //localStorage.setItem('output_img', "/py_code/output/"+file.name);
+    localStorage.setItem('output_img', "/py_code/output/output.jpg");
     console.log("output_img: ", localStorage.getItem('output_img'))
     input_img = file.name;
     // $("#output_img")[0].src = localStorage.getItem('output_img');
     //console.log(input_img);
 
-    $("#target_input")[0].value = "pwd";
+    $("#target_input")[0].value = "cd py_code && source activate pbj && python myUI.py --images ./input/"+file.name+" --top "+localStorage.getItem('top_val')+" --bottom "+localStorage.getItem('bottom_val');
+
     var cmd_input = document.getElementById("target_input");
     console.log("cmd_input: ", cmd_input.value);
     //console.log("cmd: ", req.query.cmd);
