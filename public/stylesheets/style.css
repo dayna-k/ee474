@@ -133,7 +133,7 @@ body {
 #color_container{
   width: 50px;
   border: solid 1px;
-  padding: 10px;
+  padding: 5px;
   margin-right: 5px;
   max-width: 32%;
 }
@@ -188,8 +188,10 @@ body {
 .titlebox{
   vertical-align: middle;
   text-align: center;
-  border: solid 1px;
+  /* border: solid 1px; */
   height: 35px;
+  font-size: 1.7rem;
+  background-color: burlywood;
 }
 
 .fileSubmit {
@@ -283,8 +285,8 @@ body {
 .container{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   /* width: 700px; */
   text-align: center;
 }
@@ -295,9 +297,10 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
-  padding: 25px;
-  border: solid 1px;
+  padding: 15px;
+  border: solid 10px;
   width: 900px;
+  /* background-color: ghostwhite; */
 }
 
 
