@@ -47,33 +47,195 @@
       <!-- <button class="button" id="btn_1" onclick="btn1()">button1</button> -->
 
       <div class="img_container">
-        <div class="row">
-          <div class="col" style="border: solid 1px;padding: 10px; margin-right: 5px;">
-          <!-- <div class="img_box float-left" style= "margin-right: 30px;"> -->
-            <!-- input img box -->
+        <div class="row" style="margin-left: 0px;">
+          <div class="col" style="border: solid 1px;padding: 10px; margin-right: 5px; max-width: 32.5%">
             <div class="titlebox">
               <div class="row">
-              <div class="col" style="text-align: right; padding-right: 0px;"><span style="line-height: 35px;">Input Image</span></div>
-              <div class="col" style="text-align: left; padding-left: 4px; padding-top: 4px"><label class="fileSubmit">Select<input type="file" id="getimg" accept="image/*" required ></label>
+                <div class="col" style="text-align: right; padding-right: 0px;"><span style="line-height: 35px;">Input Image</span></div>
+                <div class="col" style="text-align: left; padding-left: 4px; padding-top: 4px"><label class="fileSubmit">Select<input type="file" id="getimg" accept="image/*" required ></label></div>
               </div>
             </div>
-            </div>
-
 
             <div class="text-center" style="margin-top: 10px;">
               <!-- <img id ="input_img" src="/images/input/997_1.jpg" class="rounded show_img" alt="input img" style=""> -->
-              <img id ="input_img" src="/images/input1.jpg" class="rounded show_img" alt="input img" style="">
+              <img id ="input_img" src="/py_code/input/test.jpg" class="rounded show_img" alt="input img" style="">
             </div>
           <!-- </div> -->
           </div>
-          <div class="col" id ="color_box" style="border: solid 1px; padding: 10px; margin-right: 5px; max-width: 30%;">
+          <div class="col" id ="color_container" style="">
             <div class="titlebox">
               <span style="line-height: 35px;">Color Change</span>
             </div>
-            <!-- <div id ="color_select" style="border: solid 1px; margin-top: 10px; padding: 5px;">
+            <div class="color_box" style="">
+              <div style="border: solid 0.5px; margin-bottom: 3px; padding: 2px; text-align: left">
+                Top <img src="/png/tshirt.png" class="png24" style="height: 20px; width: 20px"><span>&nbsp&nbspcolor</span>
+                <div id="color_box_top_h" style="margin-top: 3px; padding: 0px; text-align: center; height:25px">
+                  <table id="color_table_top" class="color_table">
+                    <tr>
+                      <td style="background-color: var(--color1); color: var(--color1);">1</td>
+                      <td style="background-color: var(--color2); color: var(--color2);">2</td>
+                      <td style="background-color: var(--color3); color: var(--color3);">3</td>
+                      <td style="background-color: var(--color4); color: var(--color4);">4</td>
+                      <td style="background-color: var(--color5); color: var(--color5);">5</td>
+                      <td style="background-color: var(--color6); color: var(--color6);">6</td>
+                      <td style="background-color: var(--color7); color: var(--color7);">7</td>
+                      <td style="background-color: var(--color8); color: var(--color8);">8</td>
+                      <td style="background-color: var(--color9); color: var(--color9);">9</td>
+                      <td style="background-color: var(--color10); color: var(--color10);">10</td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="color_box_top_s" style="margin-top: 0px; padding: 0px; display: none">
+                  <table id="color_table_top_s" class="color_table2">
+                    <tr>
+                      <td style="background-color: white;">11</td>
+                      <td style="background-color: white;">12</td>
+                      <td style="background-color: white;">13</td>
+                      <td style="background-color: white;">14</td>
+                      <td style="background-color: white;">15</td>
+                      <td style="background-color: white;">16</td>
+                      <td style="background-color: white;">17</td>
+                      <td style="background-color: white;">18</td>
+                      <td style="background-color: white;">19</td>
+                      <td style="background-color: white;">20</td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: white;">21</td>
+                      <td style="background-color: white;">22</td>
+                      <td style="background-color: white;">23</td>
+                      <td style="background-color: white;">24</td>
+                      <td style="background-color: white;">25</td>
+                      <td style="background-color: white;">26</td>
+                      <td style="background-color: white;">27</td>
+                      <td style="background-color: white;">28</td>
+                      <td style="background-color: white;">29</td>
+                      <td style="background-color: white;">30</td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: white;">31</td>
+                      <td style="background-color: white;">32</td>
+                      <td style="background-color: white;">33</td>
+                      <td style="background-color: white;">34</td>
+                      <td style="background-color: white;">35</td>
+                      <td style="background-color: white;">36</td>
+                      <td style="background-color: white;">37</td>
+                      <td style="background-color: white;">38</td>
+                      <td style="background-color: white;">39</td>
+                      <td style="background-color: white;">40</td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: white;">41</td>
+                      <td style="background-color: white;">42</td>
+                      <td style="background-color: white;">43</td>
+                      <td style="background-color: white;">44</td>
+                      <td style="background-color: white;">45</td>
+                      <td style="background-color: white;">46</td>
+                      <td style="background-color: white;">47</td>
+                      <td style="background-color: white;">48</td>
+                      <td style="background-color: white;">49</td>
+                      <td style="background-color: white;">50</td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: white;">51</td>
+                      <td style="background-color: white;">52</td>
+                      <td style="background-color: white;">53</td>
+                      <td style="background-color: white;">54</td>
+                      <td style="background-color: white;">55</td>
+                      <td style="background-color: white;">56</td>
+                      <td style="background-color: white;">57</td>
+                      <td style="background-color: white;">58</td>
+                      <td style="background-color: white;">59</td>
+                      <td style="background-color: white;">60</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div style="border: solid 0.5px; margin-top: 0px; padding: 2px; text-align: left">
+                Bottom<img src="/png/long-pants.png" class="png24" style="height: 20px; width: 20px">
+                <div id="color_box_bottom_h" style="margin-top: 3px; padding: 0px; text-align: center;">
+                  <table id="color_table_bottom" class="color_table">
+                    <tr>
+                      <td style="background-color: var(--color1); color: var(--color1);">1</td>
+                      <td style="background-color: var(--color2); color: var(--color2);">2</td>
+                      <td style="background-color: var(--color3); color: var(--color3);">3</td>
+                      <td style="background-color: var(--color4); color: var(--color4);">4</td>
+                      <td style="background-color: var(--color5); color: var(--color5);">5</td>
+                      <td style="background-color: var(--color6); color: var(--color6);">6</td>
+                      <td style="background-color: var(--color7); color: var(--color7);">7</td>
+                      <td style="background-color: var(--color8); color: var(--color8);">8</td>
+                      <td style="background-color: var(--color9); color: var(--color9);">9</td>
+                      <td style="background-color: var(--color10); color: var(--color10);">10</td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="color_box_bottom_s" style="margin-top: 0px; padding: 0px; display: none">
+                  <table id="color_table_bottom_s" class="color_table2">
+                    <tr>
+                      <td style="background-color: white;">11</td>
+                      <td style="background-color: white;">12</td>
+                      <td style="background-color: white;">13</td>
+                      <td style="background-color: white;">14</td>
+                      <td style="background-color: white;">15</td>
+                      <td style="background-color: white;">16</td>
+                      <td style="background-color: white;">17</td>
+                      <td style="background-color: white;">18</td>
+                      <td style="background-color: white;">19</td>
+                      <td style="background-color: white;">20</td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: white;">21</td>
+                      <td style="background-color: white;">22</td>
+                      <td style="background-color: white;">23</td>
+                      <td style="background-color: white;">24</td>
+                      <td style="background-color: white;">25</td>
+                      <td style="background-color: white;">26</td>
+                      <td style="background-color: white;">27</td>
+                      <td style="background-color: white;">28</td>
+                      <td style="background-color: white;">29</td>
+                      <td style="background-color: white;">30</td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: white;">31</td>
+                      <td style="background-color: white;">32</td>
+                      <td style="background-color: white;">33</td>
+                      <td style="background-color: white;">34</td>
+                      <td style="background-color: white;">35</td>
+                      <td style="background-color: white;">36</td>
+                      <td style="background-color: white;">37</td>
+                      <td style="background-color: white;">38</td>
+                      <td style="background-color: white;">39</td>
+                      <td style="background-color: white;">40</td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: white;">41</td>
+                      <td style="background-color: white;">42</td>
+                      <td style="background-color: white;">43</td>
+                      <td style="background-color: white;">44</td>
+                      <td style="background-color: white;">45</td>
+                      <td style="background-color: white;">46</td>
+                      <td style="background-color: white;">47</td>
+                      <td style="background-color: white;">48</td>
+                      <td style="background-color: white;">49</td>
+                      <td style="background-color: white;">50</td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: white;">51</td>
+                      <td style="background-color: white;">52</td>
+                      <td style="background-color: white;">53</td>
+                      <td style="background-color: white;">54</td>
+                      <td style="background-color: white;">55</td>
+                      <td style="background-color: white;">56</td>
+                      <td style="background-color: white;">57</td>
+                      <td style="background-color: white;">58</td>
+                      <td style="background-color: white;">59</td>
+                      <td style="background-color: white;">60</td>
+                    </tr>
+                  </table>
+                </div>
 
-            </div> -->
-            <div id="color_slider" style="border: solid 1px; margin-top: 15px; padding: 5px;" >
+              </div>
+            </div>
+            <!-- <div id="color_slider" style="border: solid 1px; margin-top: 15px; padding: 5px;" >
               <div style="border: solid 0.5px;">
                 top <img src="/png/tshirt.png" class="png24" style="height: 20px; width: 20px"> <span id="slidevalue1"></span>
                 <div class="slidecontainer" style ="padding: 10px">
@@ -87,29 +249,28 @@
                 </div>
 
               </div>
-            </div>
+            </div> -->
             <div>
               <button class="button_long" id="btn_color" onclick="btn_color()">Change Color</button>
             </div>
           </div>
 
-          <div class="col" style="border: solid 1px; padding: 10px;">
-          <!-- <div class="img_box float-right" style= ""> -->
-          <div class="titlebox">
-            <span style="line-height: 35px;">Output Image</span>
-          </div>
-
-            <div class="text-center" style="margin-top: 10px;">
-              <img id ="output_img" src="/images/output1.jpg" class="rounded show_img" alt="output img" style="">
+          <div class="col" style="border: solid 1px; padding: 10px; max-width: 32.5%">
+            <div class="titlebox">
+              <span style="line-height: 35px;">Output Image</span>
             </div>
-          <!-- </div> -->
+            <div class="text-center" style="margin-top: 10px;">
+              <img id ="output_img" src="/py_code/output/output.jpg" class="rounded show_img" alt="output img" style="">
+            </div>
           </div>
-        </div>
       </div>
-      <form id='target' action=''>
+      </div>
+
+      <form id='target' action='' style="display: none">
         <input id='target_input' name='cmd' type='text' placeholder="type command">
         <input id ='cmd_submit' class="button" type='submit' value='submit'>
       </form>
+
       <h4 id="term_result"><%= data %></h4>
       <div>
         <button class="button" id="btn_reset" onclick="btn_reset()">reset</button>
