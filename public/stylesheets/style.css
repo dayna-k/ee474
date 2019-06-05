@@ -36,7 +36,8 @@
 }
 
 body {
-    background-color: var(--background);
+    /* background-color: var(--background); */
+    background-color: white;
     font-family: "Arita-400";
     margin-top: 10px;
 }
@@ -111,8 +112,15 @@ body {
     color: white;
     text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey);
 }
+.titlebox{
+  vertical-align: middle;
+  text-align: center;
+  border: solid 1px;
+  height: 35px;
+}
 
 .fileSubmit {
+  /* margin-top: 4px; */
   /* margin-bottom: 10px; */
 	overflow: hidden;
   font-weight: 400;
@@ -122,9 +130,9 @@ body {
   border: solid var(--darker-grey) 1px;
   border-radius: 5px 5px;
 
-  width: 200px;
+  width: 70px;
   background-color: var(--light-table-border-color);
-  padding: 3px 3px;
+  padding: 2px 2px;
   color: black;
   text-align: center;
   text-decoration: none;
@@ -228,8 +236,9 @@ body {
 }
 
 .show_img{
-  width:200px;
-  height:300px;
+  text-align: center;
+  width: 200px;
+  height: 300px;
   background-color: white;
 }
 

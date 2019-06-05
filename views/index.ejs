@@ -51,34 +51,41 @@
           <div class="col" style="border: solid 1px;padding: 10px; margin-right: 5px;">
           <!-- <div class="img_box float-left" style= "margin-right: 30px;"> -->
             <!-- input img box -->
-            <label class="fileSubmit">
-              Select Input Image
-              <input type="file" id="getimg" accept="image/*" required >
-            </label>
-            <div class="text-center" style="margin-top: 0px;">
+            <div class="titlebox">
+              <div class="row">
+              <div class="col" style="text-align: right; padding-right: 0px;"><span style="line-height: 35px;">Input Image</span></div>
+              <div class="col" style="text-align: left; padding-left: 4px; padding-top: 4px"><label class="fileSubmit">Select<input type="file" id="getimg" accept="image/*" required ></label>
+              </div>
+            </div>
+            </div>
+
+
+            <div class="text-center" style="margin-top: 10px;">
               <!-- <img id ="input_img" src="/images/input/997_1.jpg" class="rounded show_img" alt="input img" style=""> -->
               <img id ="input_img" src="/images/input1.jpg" class="rounded show_img" alt="input img" style="">
             </div>
           <!-- </div> -->
           </div>
           <div class="col" id ="color_box" style="border: solid 1px; padding: 10px; margin-right: 5px; max-width: 30%;">
-            color change box
+            <div class="titlebox">
+              <span style="line-height: 35px;">Color Change</span>
+            </div>
+            <!-- <div id ="color_select" style="border: solid 1px; margin-top: 10px; padding: 5px;">
+
+            </div> -->
             <div id="color_slider" style="border: solid 1px; margin-top: 15px; padding: 5px;" >
               <div style="border: solid 0.5px;">
                 top <img src="/png/tshirt.png" class="png24" style="height: 20px; width: 20px"> <span id="slidevalue1"></span>
                 <div class="slidecontainer" style ="padding: 10px">
                   <input type="range" min="0" max="100" class="slider" id="myRange1">
                 </div>
-                <!-- <div id="slidevalue1">
-                </div> -->
               </div>
               <div style="border: solid 0.5px; margin-top: 15px;">
                 bottom<img src="/png/long-pants.png" class="png24" style="height: 20px; width: 20px"> <span id="slidevalue2"></span>
                 <div class="slidecontainer" style ="padding: 10px">
                   <input type="range" min="0" max="100" class="slider" id="myRange2">
                 </div>
-                <!-- <div id="slidevalue2">
-                </div> -->
+
               </div>
             </div>
             <div>
@@ -88,7 +95,10 @@
 
           <div class="col" style="border: solid 1px; padding: 10px;">
           <!-- <div class="img_box float-right" style= ""> -->
-            Output Image
+          <div class="titlebox">
+            <span style="line-height: 35px;">Output Image</span>
+          </div>
+
             <div class="text-center" style="margin-top: 10px;">
               <img id ="output_img" src="/images/output1.jpg" class="rounded show_img" alt="output img" style="">
             </div>
