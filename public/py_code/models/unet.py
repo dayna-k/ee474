@@ -19,7 +19,7 @@ def regulator(net, dropout=True, BN = True):
 
     return net
 
-def Unet(nClasses, input_height=256, input_width=256, nChannels=3, dropout=True, BN=True):
+def Unet(nClasses, input_height=256, input_width=256, nChannels=3, dropout=False, BN=True):
     inputs = Input(shape=(input_height, input_width, nChannels))
     # encode
     # 256x256

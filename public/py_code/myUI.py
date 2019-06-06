@@ -4,10 +4,8 @@ import cv2
 from models import unet
 from utils.segdata_generator import generator
 import argparse
-import colorsys
 import os
 from tqdm import tqdm
-
 import time
 
 
@@ -26,8 +24,8 @@ def gen_list(img_file):
 
 ## predict part
 
-def predict_segmentation():
-    images_path = args.images
+def predict_segmentation(im_fn):
+    images_path = im_fn
 
     img_dir = os.path.dirname(images_path) + '/'
     img_file = images_path.split('/')[-1]
@@ -46,7 +44,7 @@ def predict_segmentation():
     input_height = 256
     input_width = 256
 
-    m = unet.Unet(n_classes, input_height=input_height, input_width=input_width, dropout=True, BN=False)
+    m = unet.Unet(n_classes, input_height=input_height, input_width=input_width, dropout=False, BN=True)
 
     m.load_weights("./weights/parse_weights.h5")
     m.compile(loss='categorical_crossentropy',
@@ -66,7 +64,7 @@ def predict_segmentation():
             seg_img[:, :, 0] += ((pr[:, :] == c) * (colors[c][0])).astype('uint8')
             seg_img[:, :, 1] += ((pr[:, :] == c) * (colors[c][1])).astype('uint8')
             seg_img[:, :, 2] += ((pr[:, :] == c) * (colors[c][2])).astype('uint8')
-
+        # cv2.imwrite("./test_seg_previous2.png", seg_img)
         if img_height >= img_width:
             scale = img_height / input_height
             new_width = int(img_width / scale)  # new_width = 170
@@ -78,63 +76,76 @@ def predict_segmentation():
             new_height = int(img_height / scale)
             diff = (input_height - new_height) // 2
             seg_img = seg_img[diff:diff + new_height, :, :]
-
-        seg_img = cv2.resize(seg_img, (img_width, img_height))
-
+        # cv2.imwrite("./test_seg_previous.png", seg_img)
+        seg_img = cv2.resize(seg_img, (img_width, img_height), interpolation= cv2.INTER_LINEAR)
+        # cv2.imwrite("./test_seg.png", seg_img)
         return seg_img
 
 
 ## recoloring part
 
-def imageSegmentationGenerator():
+def imageSegmentationGenerator(img_path, idx):
+    # assert (args.top[0] >= 1) and (args.top[0] <= 9)
+    # assert (args.bottom[0] >= 1) and (args.bottom[0] <= 9)
+    # assert abs(args.top[1])<=2
+    # assert abs(args.bottom[1]) <= 2
 
-    im_fn = args.images
+    # im_fn = args.images
 
-    pred = predict_segmentation()
+    im_fn = './UI/'+img_path[idx]
+
+    pred = predict_segmentation(im_fn)
 
     org = cv2.imread(im_fn, 1)
 
 
-    re = cv2.imread(im_fn, 1)
+    hue_list = [0, 25, 50, 125, 190, 180, 230, 280, 300]
 
+    for th in range(1, 11):
+        for ts in range(1, 6):
+            for bh in range(1, 11):
+                for bs in range(1, 6):
 
-    for height in range(org.shape[0]):
-            for width in range(org.shape[1]):
-                if (pred[height][width][1] == 255):
-                    b, g, r = re[height, width]
-                    h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
-                    h = (h + args.top/100) - int(h + args.top/100)
-                    # s = (s + args.top/100) - int(s + args.top/100)
-                    r, g, b = colorsys.hsv_to_rgb(h, s, v)
-                    re[height, width] = b * 255, g * 255, r * 255
-                if (pred[height][width][2] == 255):
-                    b, g, r = re[height, width]
-                    h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
-                    h = (h + args.bottom/100) - int(h + args.bottom/100)
-                    # s = (s + args.top / 100) - int(s + args.top / 100)
-                    r, g, b = colorsys.hsv_to_rgb(h, s, v)
-                    re[height, width] = b * 255, g * 255, r * 255
+                    re = cv2.imread(im_fn, 1)
+                    re = cv2.cvtColor(re, cv2.COLOR_BGR2HSV)
 
+                    for height in range(org.shape[0]):
+                            for width in range(org.shape[1]):
+                                pixel = list(pred[height][width])
+                                if ((pixel.index(max(pixel))==1)):
+                                    if th != 1:
+                                        re[height:height + 1, width:width + 1, 0] = hue_list[th-2] / 2
 
-    cv2.imshow("org", org)
-    cv2.imshow("re", re)
-    cv2.imwrite("./output/output.jpg", re)
+                                    s = (float)(re[height:height+1, width:width+1, 1] / 255)
+                                    factor = (float)( (3 -ts) / 2) # range from -1 to 1
 
+                                    s = (int)(((-s + 0.5) * factor * factor + 0.5 * factor + s) * 255)
+
+                                    re[height:height + 1, width:width + 1, 1] = min(255,max(0,s))
+
+                                elif ((pixel.index(max(pixel))==2)):
+                                    if bh != 1:
+                                        re[height:height + 1, width:width + 1, 0] = hue_list[bh-2] / 2
+
+                                    s = (float)(re[height:height+1, width:width+1, 1] / 255)
+                                    factor = (float)((3-bs)/2) # range from -1 to 1
+
+                                    s = (int)(((-s + 0.5) * factor * factor + 0.5 * factor + s)*255)
+
+                                    re[height:height + 1, width:width + 1, 1] = min(255,max(0,s))
+                    re = cv2.cvtColor(re, cv2.COLOR_HSV2BGR)
+
+                    path = './UI/' + img_path[idx][0:5] + '/{0}_{1}_{2}_{3}_{4}.png'.format(img_path[idx][0:5],th,ts,bh,bs)
+                    cv2.imwrite(path, re)
 
 if __name__ == '__main__':
 
-    s = time.time()
-
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--images", type=str, default='./input/test.jpg')
-    parser.add_argument("--top", type=int, default=20)
-    parser.add_argument("--bottom", type=int, default=20)
-    args = parser.parse_args()
-
-    imageSegmentationGenerator()
-
-
-    e = time.time()
-
-    print ('Total Time : {} seconds'.format(e-s))
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("--images", type=str, default='./test2.jpg')
+    # parser.add_argument("--top", nargs=2, type=int, default=[7,20])
+    # parser.add_argument("--bottom", nargs=2, type=int, default=[3,20])
+    # args = parser.parse_args()
+    img_path = ['test1.png', 'test2.png', 'test3.jpg','test4.jpg']
+    for idx in range(1,5):
+        imageSegmentationGenerator(img_path, idx)
+        print ('Image {} is finished'.format(img_path[idx]))
