@@ -155,14 +155,15 @@ $(document).ready(function () {
 
 
     /* set output image name */
-    output_img = localStorage.getItem('file')+"_"+prev_t_color_c+"_"+prev_t_color_r+"_"+prev_b_color_c+"_"+prev_b_color_r+".jpg";
+    output_img = localStorage.getItem('file')+"_"+prev_t_color_c+"_"+prev_t_color_r+"_"+prev_b_color_c+"_"+prev_b_color_r+".png";
     localStorage.setItem('output_img', output_img);
     console.log(localStorage.getItem('output_img'));
     //$("#output_img")[0].src = "/py_code/output/"+output_img;
 
     // $("#output_img")[0].src = localStorage.getItem('output_img');
     $("#output_img")[0].style.display = 'none';
-    $("#output_img")[0].src = "/py_code/output/output.jpg";
+    // $("#output_img")[0].src = "/py_code/output/output.jpg";
+    $("#output_img")[0].src = "/py_code/output/"+localStorage.getItem('file')+"/"+output_img;
 
     setTimeout(function() {
       success.innerHTML= "&nbsp<i class='fas fa-check-circle'></i>";
@@ -295,7 +296,7 @@ $(document).ready(function () {
   $("#color_table_bottom_s td").click(function(){
     var table_top_s = document.getElementById("color_table_top_s");
     var table_bottom_s = document.getElementById("color_table_bottom_s");
-    var topval = document.getElementById("bottomval");
+    var bottomval = document.getElementById("bottomval");
     var ts_td = $(this);
     var tr = $(this).parent();
     var row = 0;
