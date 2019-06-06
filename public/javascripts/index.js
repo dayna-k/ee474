@@ -246,6 +246,8 @@ $(document).ready(function () {
       }
       this.classList.add("color_h_clicked");
       topval.innerHTML='&nbsp&nbsp<span style="background-color: '+color_list[row-1][col-1]+'; word-spacing:10px">&nbsp&nbsp;</span>'
+      var success = document.getElementById("out_success");
+      success.innerHTML= "&nbsp<i class='fas fa-exclamation-circle'></i>";
     }
     return false;
   })
@@ -323,6 +325,8 @@ $(document).ready(function () {
       }
       this.classList.add("color_h_clicked");
       bottomval.innerHTML='&nbsp&nbsp<span style="background-color: '+color_list[row-1][col-1]+'; word-spacing:10px">&nbsp&nbsp;</span>'
+      var success = document.getElementById("out_success");
+      success.innerHTML= "&nbsp<i class='fas fa-exclamation-circle'></i>";
     }
     return false;
   });
