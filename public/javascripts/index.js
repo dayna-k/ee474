@@ -143,16 +143,16 @@ $(document).ready(function () {
     // console.log("bottom_val: ", localStorage.getItem('bottom_val'))
 
     /* set cmd line */
-    /*
-    cmd_line = "cd public/py_code; source activate pbj; python myUI.py --images ./input/"+localStorage.getItem('file')+".jpg --top "+prev_t_color_c+" --bottom "+prev_b_color_c+"; sleep 5; pwd";
+
+    cmd_line = "cd public/py_code; source activate pbj; python myUI.py --images ./input/"+localStorage.getItem('file')+".jpg --top "+prev_t_color_c+" "+prev_t_color_r+" --bottom "+prev_b_color_c+" "+prev_b_color_r+"; sleep 5; pwd";
     // $("#target_input")[0].value = "cd public/py_code; source activate pbj; python myUI.py --images ./input/"+file.name+" --top "+localStorage.getItem('top_val')+" --bottom "+localStorage.getItem('bottom_val')+"; sleep 5; pwd";
     // $("#target_input")[0].value = "cd public/py_code && source activate pbj && python myUI.py --images ./input/"+file.name+" --top "+localStorage.getItem('top_val')+" --bottom "+localStorage.getItem('bottom_val') && sleep(7) && pwd;
     $("#target_input")[0].value = cmd_line;
     var cmd_input = document.getElementById("target_input");
     console.log("cmd_input: ", cmd_input.value);
-    console.log("cmd: ", req.query.cmd);
-    exec_cmd($("#target_input")[0].value);
-    */
+    // console.log("cmd: ", req.query.cmd);
+    // exec_cmd($("#target_input")[0].value);
+
 
     /* set output image name */
     output_img = localStorage.getItem('file')+"_"+prev_t_color_c+"_"+prev_t_color_r+"_"+prev_b_color_c+"_"+prev_b_color_r+".jpg";
