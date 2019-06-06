@@ -1,13 +1,14 @@
 :root {
     --background: #F7F7F7;
     --darker-grey: #A9A9A9;
-    --btn-color: #6CCDEB;
+    --btn-color: #675747;
     --light-table-border-color: #EDF0F5;
     --slider-skyblue: #A4CAFF;
     --light-purple: #A3A6FF;
     --light-pink: #FEBBE2;
     --light-green: #A4FDBE;
     --light-yellow: #FFFF9B;
+    --title-box: #453627;
 
 
     --default_s_1: #F70000;
@@ -16,7 +17,7 @@
     --default_s_4: #F2CECE;
     --default_s_5: #E6DADA;
 
-    --color1: #B3B3B3;
+    --color1: #808080;
     --color2: #FF0000;
     --color3: #ff6a00;
     --color4: #ffd500;
@@ -27,10 +28,10 @@
     --color9: #aa00ff;
     --color10: #ff00ff;
 
-    --color1_s_2: #B3B3B3;
+    --color1_s_2: #999999;
     --color1_s_3: #B3B3B3;
-    --color1_s_4: #B3B3B3;
-    --color1_s_5: #B3B3B3;
+    --color1_s_4: #CCCCCC;
+    --color1_s_5: #E6E6E6;
 
     --color2_s_2: #FF5C5C;
     --color2_s_3: #FF8787;
@@ -120,7 +121,7 @@ body {
     margin-left: auto;
     width: 900px; */
     /* border: solid 1px; */
-    padding: 20px;
+    padding: 10px;
     background-color: black;
     color: white;
     /* text-align: center; */
@@ -132,7 +133,8 @@ body {
 
 #color_container{
   width: 50px;
-  border: solid 1px;
+  height: 465px;
+  border: solid 5px;
   padding: 5px;
   margin-right: 5px;
   max-width: 32%;
@@ -140,13 +142,13 @@ body {
 
 .button {
   margin: 10px;
-  border: solid var(--darker-grey) 1px;
+  border: solid var(--btn-color) 2px;
   border-radius: 5px 5px;
 
   width: 80px;
   background-color: var(--light-table-border-color);
   padding: 3px 3px;
-  color: black;
+  color: var(--btn-color);
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -159,18 +161,18 @@ body {
     background-color: var(--btn-color);
     box-shadow: 1px 1px 2px grey;
     color: white;
-    text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey);
+    /* text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey); */
 }
 
 .button_long {
-  margin: 10px;
-  border: solid var(--darker-grey) 1px;
+  margin: 5px;
+  border: solid var(--btn-color) 2px;
   border-radius: 5px 5px;
 
   width: 120px;
   background-color: var(--light-table-border-color);
   padding: 3px 3px;
-  color: black;
+  color: var(--btn-color);
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -183,7 +185,7 @@ body {
     background-color: var(--btn-color);
     box-shadow: 1px 1px 2px grey;
     color: white;
-    text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey);
+    /* text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey); */
 }
 .titlebox{
   vertical-align: middle;
@@ -191,7 +193,8 @@ body {
   /* border: solid 1px; */
   height: 35px;
   font-size: 1.7rem;
-  background-color: burlywood;
+  background-color: var(--title-box);
+  color: white;
 }
 
 .fileSubmit {
@@ -202,13 +205,13 @@ body {
 	/* display: block; */
 	float: center;
 
-  border: solid var(--darker-grey) 1px;
+  border: solid var(--btn-color) 2px;
   border-radius: 5px 5px;
 
   width: 70px;
   background-color: var(--light-table-border-color);
   padding: 2px 2px;
-  color: black;
+  color: var(--btn-color);
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -229,7 +232,7 @@ body {
     background-color: var(--btn-color);
     box-shadow: 1px 1px 2px grey;
     color: white;
-    text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey);
+    /* text-shadow: -0.5px 0 var(--darker-grey), 0 0.5px var(--darker-grey), 0.5px 0 var(--darker-grey), 0 -0.5px var(--darker-grey); */
 }
 
 .png24 {
@@ -238,7 +241,7 @@ body {
 
 
 .color_box{
-  border: solid 1px;
+  border: solid 2px;
   margin-top: 10px;
   padding: 3px;
 }

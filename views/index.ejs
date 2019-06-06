@@ -48,7 +48,7 @@
 
       <div class="img_container">
         <div class="row" style="margin-left: 0px;">
-          <div class="col" style="border: solid 1px;padding: 5px; margin-right: 5px; max-width: 32.5%">
+          <div class="col" style="border: solid 5px;padding: 5px; margin-right: 5px; max-width: 32.5%">
             <div class="titlebox">
               <div class="row">
                 <div class="col" style="text-align: right; padding-right: 0px;"><span style="line-height: 35px;">Input Image</span></div>
@@ -58,7 +58,7 @@
 
             <div class="text-center" style="margin-top: 10px;">
               <!-- <img id ="input_img" src="/images/input/997_1.jpg" class="rounded show_img" alt="input img" style=""> -->
-              <img id ="input_img" src="/py_code/input/test.jpg" class="rounded show_img" alt="input img" style="">
+              <img id ="input_img" src="/py_code/input/white.jpg" class="rounded show_img" alt="input img" style="">
             </div>
           <!-- </div> -->
           </div>
@@ -68,11 +68,14 @@
             </div>
             <div class="color_box" style="">
               <div style="border: solid 0.5px; margin-bottom: 3px; padding: 2px; text-align: left">
-                Top <img src="/png/tshirt.png" class="png24" style="height: 20px; width: 20px"><span id="topval">&nbsp&nbspcolor</span>
+                Top
+                <img src="/png/tshirt.png" class="png24" style="height: 20px; width: 20px">
+                <span id="topval">&nbsp&nbspcolor</span>
+                <span style="float:right; margin-right: 10px; cursor: pointer;" onclick="open_top_box_s()"><i class="fas fa-angle-down"></i>&nbsp<i class="fas fa-angle-up"></i></span>
                 <div id="color_box_top_h" style="margin-top: 3px; padding: 0px; text-align: center; height:25px">
                   <table id="color_table_top" class="color_table">
                     <tr>
-                      <td style="background-color: var(--color1); color: var(--color1);">1</td>
+                      <td style="background-image: url('images/rainbow.jpg'); background-size: 24px; color: rgba(0, 0, 0, 0);">1</td>
                       <td style="background-color: var(--color2); color: var(--color2);">2</td>
                       <td style="background-color: var(--color3); color: var(--color3);">3</td>
                       <td style="background-color: var(--color4); color: var(--color4);">4</td>
@@ -151,11 +154,14 @@
                 </div>
               </div>
               <div style="border: solid 0.5px; margin-top: 0px; padding: 2px; text-align: left">
-                Bottom<img src="/png/long-pants.png" class="png24" style="height: 20px; width: 20px"><span id="bottomval">&nbsp&nbspcolor</span>
+                Bottom
+                <img src="/png/long-pants.png" class="png24" style="height: 20px; width: 20px">
+                <span id="bottomval">&nbsp&nbspcolor</span>
+                <span style="float:right; margin-right: 10px; cursor: pointer;" onclick="open_bottom_box_s()"><i class="fas fa-angle-down"></i>&nbsp<i class="fas fa-angle-up"></i></span>
                 <div id="color_box_bottom_h" style="margin-top: 3px; padding: 0px; text-align: center;">
                   <table id="color_table_bottom" class="color_table">
                     <tr>
-                      <td style="background-color: var(--color1); color: var(--color1);">1</td>
+                      <td style="background-image: url('images/rainbow.jpg'); background-size: 24px; color: rgba(0, 0, 0, 0);">1</td>
                       <td style="background-color: var(--color2); color: var(--color2);">2</td>
                       <td style="background-color: var(--color3); color: var(--color3);">3</td>
                       <td style="background-color: var(--color4); color: var(--color4);">4</td>
@@ -251,13 +257,13 @@
               </div>
             </div> -->
             <div>
-              <button class="button_long" id="btn_color" onclick="btn_color()">Change Color</button>
+              <button class="button_long" id="btn_color" >Change Color</button>
             </div>
           </div>
 
-          <div class="col" style="border: solid 1px; padding: 5px; max-width: 32.5%; background-color: white">
+          <div class="col" style="border: solid 5px; padding: 5px; max-width: 32.5%; background-color: white">
             <div class="titlebox">
-              <span style="line-height: 35px;">Output Image</span>
+              <span style="line-height: 35px;">Output Image</span><span id="out_success" style="">&nbsp<i class="fas fa-exclamation-circle"></i></span>
             </div>
             <div class="text-center" style="margin-top: 10px;">
               <img id ="output_img" src="/py_code/output/white.jpg" class="rounded show_img" alt="output img" style="display:none">
