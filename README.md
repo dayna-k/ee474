@@ -21,7 +21,7 @@ demo 실행 방법
 # app.js, index.ejs
 ### shell(terminal) 연결 위해 nodejs, expressjs 설치 필요
 
-1. node module 설치, python module 설치
+1. node module 설치, python module 설치(python 2.7 ver)
 ```
 node, nodejs, npm, express 설치 후 최신버전 업데이트 필요
 tensorflow, keras, opencv, etc.
