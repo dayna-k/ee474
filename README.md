@@ -19,9 +19,9 @@ demo 실행 방법
 
 
 # app.js, index.ejs
-### shell(terminal) 연결 위해 nodejs, expressjs 설치
+### shell(terminal) 연결 위해 nodejs, expressjs 설치 필요
 
-1. module 설치, python module 설치
+1. node module 설치, python module 설치
 ```
 node, nodejs, npm, express 설치 후 최신버전 업데이트 필요
 tensorflow, keras, opencv, etc.
@@ -36,7 +36,7 @@ DEBUG=ee474:* npm start (ee474: directory 이름)
 ```
 3. http://localhost:3002/ 로 접속
 
-4. public/py_code/input에 input 저장 후 사용
+4. public/py_code/input에 input으로 사용할 이미지 저장 후 사용
 
 
 # directory layout and structure
