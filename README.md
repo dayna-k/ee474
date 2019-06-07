@@ -4,7 +4,7 @@
 > Team7: Color man-C(hange), 칼라만씨
 > Kim Dayeon, Park Byeongjun, Park Sion, Jeon Jiwon
 
-img segmentation and recoloring the clothes
+image segmentation and recoloring the clothes
 
 
 # index.html (demo 실행 파일)
@@ -18,22 +18,25 @@ demo 실행 방법
 5. change color 버튼 클릭
 
 
-# app.js/ index.ejs
+# app.js, index.ejs
 ### shell(terminal) 연결 위해 nodejs, expressjs 설치
+
+1. module 설치, python module 설치
 ```
 node, nodejs, npm, express 설치 후 최신버전 업데이트 필요
+tensorflow, keras, opencv, etc.
 ```
 
-clone 및 pull 후 (ee474 -> 설치 폴더 이름)
+2. 파일 clone 및 pull 후 해당 directory로 이동
 
 ```
 npm install
 
-DEBUG=ee474:* npm start
+DEBUG=ee474:* npm start (ee474: directory 이름)
 ```
-http://localhost:3002/ 로 접속
+3. http://localhost:3002/ 로 접속
 
-input image : public/py_code/input
+4. public/py_code/input에 input 저장 후 사용
 
 
 # directory layout and structure
@@ -41,7 +44,7 @@ input image : public/py_code/input
         ee474
           │
           ├── bin
-          │     └── www                 server creation
+          │     └── www **              server creation
           │
           ├── node_modules              nodeJS, expressJS modules
           │
@@ -50,7 +53,7 @@ input image : public/py_code/input
           │     │
           │     ├── images              used images for the interface (ex. rainbow, sample images)
           │     │
-          │     ├── javascripts
+          │     ├── javascripts **
           │     │     └── index.js      all functions for the index.ejs
           │     │                             open_top_box_s(), open_bottom_box_s() : onClick function for color table collapse
           │     │                             btn_reset() : onClick function for reset button
@@ -65,7 +68,7 @@ input image : public/py_code/input
           │     │                             
           │     ├── png                 used png images for the interface (ex. t-shirt, long-pants)
           │     │
-          │     ├── py_code
+          │     ├── py_code **
           │     │     ├── input         input sample images (ex. test1, test2, test3, test4)
           │     │     │
           │     │     ├── models        __init__.py, __init__.pyc, unet.py, unet.pyc
@@ -78,25 +81,25 @@ input image : public/py_code/input
           │     │     │
           │     │     └── myUI.py       implemented python code for segmentation and coloring
           │     │
-          │     └── stylesheets
+          │     └── stylesheets **
           │           └── style.css     style css file for index.ejs, index.js
           │
           ├── routes
           │     ├── cmd.js              routes js file for sending command in cmd.ejs (for reference)
           │     │
-          │     └── index.js            routes js file for sending command in index.ejs
+          │     └── index.js **         routes js file for sending command in index.ejs
           │
           ├── views
           │     ├── cmd.ejs             view ejs file for sending command (for reference)
           │     │
           │     ├── error.ejs           views ejs file for sending error
           │     │
-          │     └── index.ejs           views ejs file for our project
+          │     └── index.ejs **        views ejs file for our project
           │
           ├── app.js                    create the scheme of modules(nodeJs and expressJS) and construct routes
           │
-          ├── index.html                html file for demo (http://dayna-k.github.io/ee474)
+          ├── index.html **             html file for demo (http://dayna-k.github.io/ee474)
           │
-          ├── style.css                 style css file for index.html
+          ├── style.css **              style css file for index.html
           │
           └── etc.                      python files for test, screenshot of the interface(progression : slide, final : colorbox),
