@@ -87,11 +87,11 @@ input image : public/py_code/input
           │     └── index.js            routes js file for sending command in index.ejs
           │
           ├── views
-          │     ├── cmd.ejs              view ejs file for sending command (for reference)
+          │     ├── cmd.ejs             view ejs file for sending command (for reference)
           │     │
-          │     ├── error.ejs            views ejs file for sending error
+          │     ├── error.ejs           views ejs file for sending error
           │     │
-          │     └── index.ejs            views ejs file for our project
+          │     └── index.ejs           views ejs file for our project
           │
           ├── app.js                    create the scheme of modules(nodeJs and expressJS) and construct routes
           │
