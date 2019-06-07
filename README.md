@@ -1,7 +1,8 @@
 # EE474: Intro to MM (2019 Spring Term Project)
-## Image Segmentation and Recoloring the Clothes
-### Team7: Color man-C(hange), 칼라만씨
-### Kim Dayeon, Park Byeongjun, Park Sion, Jeon Jiwon
+## 0. Image Segmentation and Recoloring the Clothes
+Team7: Color man-C(hange), 칼라만씨
+
+Kim Dayeon, Park Byeongjun, Park Sion, Jeon Jiwon
 
 
 
