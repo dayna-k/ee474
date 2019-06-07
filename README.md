@@ -55,7 +55,8 @@ input image : public/py_code/input
           │     │                             btn_reset() : onClick function for reset button
           │     │                             setPng24(obj) : sizing function for png files
           │     │                             $("#getimg").change(function ()) : onClick function for "select" button - load input image file
-          │     │                             $("#btn_color").click(function btn_color_onClick()) : onClick function for "change color" button │     │                                     - run the python code and load output image file
+          │     │                             $("#btn_color").click(function btn_color_onClick()) : onClick function for "change color" button
+          │     │                                     - run the python code and load output image file
           │     │                             $("#color_table_top td").click(function()), $("#color_table_bottom td").click(function()) :
           │     │                                     function for selection Hue Color for top and bottom
           │     │                             $("#color_table_top_s td").click(function()), $("#color_table__s td").click(function()) :  
