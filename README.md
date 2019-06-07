@@ -36,64 +36,65 @@ input image : public/py_code/input
 
 
 # directory layout and structure
-ee474
-  │
-  ├── bin
-  │     └── www                 server creation
-  │
-  ├── node_modules              nodeJS, expressJS modules
-  │
-  ├── public
-  │     ├── font                10 saved fonts
-  │     │
-  │     ├── images              used images for the interface (ex. rainbow, sample images)
-  │     │
-  │     ├── javascripts
-  │     │     └── index.js      all functions for the index.ejs
-  │     │                             open_top_box_s(), open_bottom_box_s() : onClick function for color table collapse
-  │     │                             btn_reset() : onClick function for reset button
-  │     │                             setPng24(obj) : sizing function for png files
-  │     │                             $("#getimg").change(function ()) : onClick function for "select" button - load input image file
-  │     │                             $("#btn_color").click(function btn_color_onClick()) : onClick function for "change color" button │     │                                     - run the python code and load output image file
-  │     │                             $("#color_table_top td").click(function()), $("#color_table_bottom td").click(function()) :
-  │     │                                     function for selection Hue Color for top and bottom
-  │     │                             $("#color_table_top_s td").click(function()), $("#color_table__s td").click(function()) :  
-  │     │                                     function for selection Saturation Color for top and bottom
-  │     │                             
-  │     ├── png                 used png images for the interface (ex. t-shirt, long-pants)
-  │     │
-  │     ├── py_code
-  │     │     ├── input         input sample images (ex. test1, test2, test3, test4)
-  │     │     │
-  │     │     ├── models        __init__.py, __init__.pyc, unet.py, unet.pyc
-  │     │     │
-  │     │     ├── output        output sample images (ex. test1, test2, test3, test4)
-  │     │     │
-  │     │     ├── utils         __init__.py, __init__.pyc, segdata_generator.py, segdata_generator.pyc
-  │     │     │
-  │     │     ├── weight        parse_weights.h5
-  │     │     │
-  │     │     └── myUI.py       implemented python code for segmentation and coloring
-  │     │
-  │     └── stylesheets
-  │           └── style.css     style css file for index.ejs, index.js
-  │
-  ├── routes
-  │     ├── cmd.js              routes js file for sending command in cmd.ejs (for reference)
-  │     │
-  │     └── index.js            routes js file for sending command in index.ejs
-  │
-  ├── views
-  │     ├── cmd.ejs              view ejs file for sending command (for reference)
-  │     │
-  │     ├── error.ejs            views ejs file for sending error
-  │     │
-  │     └── index.ejs            views ejs file for our project
-  │
-  ├── app.js                    create the scheme of modules(nodeJs and expressJS) and construct routes
-  │
-  ├── index.html                html file for demo (http://dayna-k.github.io/ee474)
-  │
-  ├── style.css                 style css file for index.html
-  │
-  └── etc.                      python files for test, screenshot of the interface(progression : slide, final : colorbox),
+
+        ee474
+          │
+          ├── bin
+          │     └── www                 server creation
+          │
+          ├── node_modules              nodeJS, expressJS modules
+          │
+          ├── public
+          │     ├── font                10 saved fonts
+          │     │
+          │     ├── images              used images for the interface (ex. rainbow, sample images)
+          │     │
+          │     ├── javascripts
+          │     │     └── index.js      all functions for the index.ejs
+          │     │                             open_top_box_s(), open_bottom_box_s() : onClick function for color table collapse
+          │     │                             btn_reset() : onClick function for reset button
+          │     │                             setPng24(obj) : sizing function for png files
+          │     │                             $("#getimg").change(function ()) : onClick function for "select" button - load input image file
+          │     │                             $("#btn_color").click(function btn_color_onClick()) : onClick function for "change color" button │     │                                     - run the python code and load output image file
+          │     │                             $("#color_table_top td").click(function()), $("#color_table_bottom td").click(function()) :
+          │     │                                     function for selection Hue Color for top and bottom
+          │     │                             $("#color_table_top_s td").click(function()), $("#color_table__s td").click(function()) :  
+          │     │                                     function for selection Saturation Color for top and bottom
+          │     │                             
+          │     ├── png                 used png images for the interface (ex. t-shirt, long-pants)
+          │     │
+          │     ├── py_code
+          │     │     ├── input         input sample images (ex. test1, test2, test3, test4)
+          │     │     │
+          │     │     ├── models        __init__.py, __init__.pyc, unet.py, unet.pyc
+          │     │     │
+          │     │     ├── output        output sample images (ex. test1, test2, test3, test4)
+          │     │     │
+          │     │     ├── utils         __init__.py, __init__.pyc, segdata_generator.py, segdata_generator.pyc
+          │     │     │
+          │     │     ├── weight        parse_weights.h5
+          │     │     │
+          │     │     └── myUI.py       implemented python code for segmentation and coloring
+          │     │
+          │     └── stylesheets
+          │           └── style.css     style css file for index.ejs, index.js
+          │
+          ├── routes
+          │     ├── cmd.js              routes js file for sending command in cmd.ejs (for reference)
+          │     │
+          │     └── index.js            routes js file for sending command in index.ejs
+          │
+          ├── views
+          │     ├── cmd.ejs              view ejs file for sending command (for reference)
+          │     │
+          │     ├── error.ejs            views ejs file for sending error
+          │     │
+          │     └── index.ejs            views ejs file for our project
+          │
+          ├── app.js                    create the scheme of modules(nodeJs and expressJS) and construct routes
+          │
+          ├── index.html                html file for demo (http://dayna-k.github.io/ee474)
+          │
+          ├── style.css                 style css file for index.html
+          │
+          └── etc.                      python files for test, screenshot of the interface(progression : slide, final : colorbox),
