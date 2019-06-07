@@ -1,14 +1,13 @@
-## README.md
-
-> EE474: Intro to MM
-> Team7: Color man-C(hange), 칼라만씨
-> Kim Dayeon, Park Byeongjun, Park Sion, Jeon Jiwon
-
-image segmentation and recoloring the clothes
+# EE474: Intro to MM (2019 Spring Term Project)
+## Image Segmentation and Recoloring the Clothes
+### Team7: Color man-C(hange), 칼라만씨
+### Kim Dayeon, Park Byeongjun, Park Sion, Jeon Jiwon
 
 
-# index.html (demo 실행 파일)
-### http://dayna-k.github.io/ee474 로 접속
+
+
+## 1. index.html (Final Presentation Demo용)
+#### (http://dayna-k.github.io/ee474) 로 접속
 
 demo 실행 방법
 1. public/py_code/input 에 있는 test1, test2, test3, test4 이미지를 로컬에 저장
@@ -18,8 +17,8 @@ demo 실행 방법
 5. change color 버튼 클릭
 
 
-# app.js, index.ejs
-### shell(terminal) 연결 위해 nodejs, expressjs 설치 필요
+## 2. app.js, index.ejs
+#### shell(terminal) 연결 위해 nodejs, expressjs 설치 필요
 
 1. node module 설치, python module 설치(python 2.7 ver)
 ```
@@ -39,7 +38,7 @@ DEBUG=ee474:* npm start (ee474: directory 이름)
 4. public/py_code/input에 input으로 사용할 이미지 저장 후 사용
 
 
-# directory layout and structure
+## 3. Project Directory Layout and Structure
 
         ee474
           │
