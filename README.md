@@ -8,7 +8,7 @@ img segmentation and recoloring the clothes
 
 
 # index.html (demo 실행 파일)
-http://dayna-k.github.io/ee474 로 접속
+### http://dayna-k.github.io/ee474 로 접속
 
 demo 실행 방법
 1. public/py_code/input 에 있는 test1, test2, test3, test4 이미지를 로컬에 저장
@@ -18,7 +18,8 @@ demo 실행 방법
 5. change color 버튼 클릭
 
 
-# app.js/ index.ejs: shell(terminal) 연결 위해 nodejs, expressjs 설치
+# app.js/ index.ejs
+### shell(terminal) 연결 위해 nodejs, expressjs 설치
 ```
 node, nodejs, npm, express 설치 후 최신버전 업데이트 필요
 ```
