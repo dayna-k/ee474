@@ -5,8 +5,9 @@ Team7: Color man-C(hange), 칼라만씨
 Kim Dayeon, Park Byeongjun, Park Sion, Jeon Jiwon
 
 [![Video Label](http://img.youtube.com/vi/1btMlEHldrY/0.jpg)](https://youtu.be/1btMlEHldrY)
+
 https://youtu.be/1btMlEHldrY?si=dMuvuspMhG-QE-Ew
-https://www.youtube.com/watch?v=1btMlEHldrY&t=2s
+
 
 
 ## 1. index.html (Final Presentation Demo용)
